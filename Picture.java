@@ -12,10 +12,13 @@
 public class Picture
 {
     private Square wall;
+    private Square wall2;
     private Square window;
+    private Square grass;
     private Triangle roof;
     private Circle sun;
     private Circle sun2;
+    private Person pers;
     private boolean drawn;
 
     /**
@@ -24,10 +27,13 @@ public class Picture
     public Picture()
     {
         wall = new Square();
+        wall2 = new Square();
         window = new Square();
         roof = new Triangle();  
         sun = new Circle();
         sun2 = new Circle();
+        pers = new Person();
+        grass = new Square();
         drawn = false;
     }
 
@@ -37,32 +43,43 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
+            wall.moveHorizontal(-200);
             wall.moveVertical(20);
             wall.changeSize(120);
             wall.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
+            wall2.moveVertical(-20);
+            wall2.moveHorizontal(-200);
+            wall2.changeSize(120);
+            wall2.makeVisible();
+            
+            window.changeColor("blue");
+            window.moveHorizontal(-140);
             window.moveVertical(40);
             window.changeSize(40);
             window.makeVisible();
     
             roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
+            roof.moveHorizontal(-40);
+            roof.moveVertical(-80);
             roof.makeVisible();
     
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
+            sun.moveVertical(-60);
+            sun.changeSize(100);
             sun.makeVisible();
             
-            sun2.changeColor("magenta");
-            sun2.moveHorizontal(-200);
-            sun2.moveVertical(-79);
-            sun2.makeVisible();
+            pers.makeVisible();
+            pers.moveHorizontal(20);
+            pers.changeSize(50,50);
+            pers.moveVertical(40);
+            
+            grass.makeVisible();
+            grass.changeSize(300);
+            grass.moveVertical(60);
+            grass.changeColor("green");
+            grass.moveHorizontal(-200);
             
             drawn = true;
         }
